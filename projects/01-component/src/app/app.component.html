@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand navbar-dark bg-danger">
+  <div class="container">
+    <a href="#" class="navbar-brand">Angular</a>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a [routerLink]="['/bind']" class="nav-link" routerLinkActive="active">Binding</a></li>
+      <li class="nav-item"><a [routerLink]="['/service']" class="nav-link" routerLinkActive="active">Services</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container mt-4">
+  <router-outlet></router-outlet>
+</main>

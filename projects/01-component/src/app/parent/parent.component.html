@@ -1,0 +1,46 @@
+<main class="container mt-4">
+
+  <div class="row">
+    <div class="col">
+      <h3 [ngClass]="classes">Parent Component(PTC)</h3>
+      <p>Data: {{ dataFromChild }}</p>
+    </div>
+    <div class="col">
+      <h3 [ngClass]="classes">Child Component(PTC)</h3>
+      <app-child-two (onSend)="dataFromChild = $event"></app-child-two>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <h3 [ngClass]="classes">Parent Component(CTP)</h3>
+      <div [style.fontSize.px]="fontSizePx" class="mb-3">Resizable Text</div>
+      <input type="range" min="0" max="100" #rangeVal (change)="fontSizePx = + rangeVal.value" [value]="fontSizePx"
+        class="form-control">
+    </div>
+    <div class="col">
+      <h3 [ngClass]="classes">Child Component(CTP)</h3>
+      <app-child-one [(size)]="fontSizePx"></app-child-one>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3 [class]="classes">{{ title }}</h3>
+  <p [class.text-danger]="toggleValue" [style.background-color]="bgColor">{{ value }}</p>
+  <button class="btn btn-primary" (click)="toggleColor($event)">Click</button>
+  <img [src]="imageUrl" [alt]="'Java Duke'" [style.width.%]="imgWidth">
+
+  <hr>
+
+  <div class="row mb-3">
+    <div class="col-auto">
+      <input [(ngModel)]="inputValue" type="text" class="form-control mb-2" placeholder="Enter something">
+      <!-- <button class="btn btn-dark" (click)="inputValue = val.value">Change Value</button> -->
+    </div>
+  </div>
+
+  <p>Output: {{ inputValue }}</p>
+</main>
