@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand bg-light">
+  <div class="container">
+    <a [routerLink]="['/']" class="navbar-brand">Angular Forms</a>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/template']" routerLinkActive="active" class="nav-link">Template</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/reactive']" routerLinkActive="active" class="nav-link">Reactive</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/dynamic']" routerLinkActive="active" class="nav-link">Dynamic</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container mt-4">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,54 @@
+<form>
+  <div class="border border-1 rounded-4 shadow-sm p-3">
+    <div class="row justify-content-between">
+      <div class="col-md-auto col-12">
+        <h3 class="m-0">Create New Student</h3>
+        <div class="text-secondary" style="font-size: 0.95rem;">
+          Create new student and save information
+        </div>
+      </div>
+      <div class="col-md-auto col-12 align-self-center">
+        <button class="btn btn-outline-danger me-2" style="width: 100px;">
+          <i class="bi bi-x-circle-fill"></i>
+          Discard
+        </button>
+        <button class="btn btn-danger" style="width: 100px;">
+          <i class="bi bi-save2-fill"></i>
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="row g-3 mt-4">
+      <div class="col-md-4 col-12">
+        <label for="name" class="form-label mb-1">Name</label>
+        <input type="text" id="name" name="name" class="form-control mb-3" placeholder="Student Name">
+        <label for="age" class="form-label mb-1">Age</label>
+        <input type="number" id="age" name="age" class="form-control mb-3">
+        <label class="form-label mb-1">Gender</label>
+        <div>
+          <input type="radio" name="gender" id="male" class="form-check-input me-2">
+          <label for="male" class="form-check-label me-3">Male</label>
+          <input type="radio" name="gender" id="female" class="form-check-input me-2">
+          <label for="female" class="form-check-label me-3">Female</label>
+          <input type="radio" name="gender" id="other" class="form-check-input me-2">
+          <label for="other" class="form-check-label me-3">Other</label>
+        </div>
+      </div>
+      <div class="col-md-7 col-12">
+        <label class="form-label mb-1">Subjects</label>
+        <div class="row g-2">
+          @for (subject of subjects; track $index) {
+            <div class="col-md-4 col-6">
+              <input type="checkbox" name="{{subject.toLowerCase()}}" 
+              id="{{subject.toLowerCase()}}"
+              class="form-check-input me-2">
+              <label for="{{subject.toLowerCase()}}" class="form-check-label">{{subject}}</label>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-md-1 col-12"></div>
+    </div>
+</form>

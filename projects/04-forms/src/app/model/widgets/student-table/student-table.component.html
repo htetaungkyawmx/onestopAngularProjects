@@ -1,0 +1,36 @@
+<h3 class="border-5 rounded-1 border-start border-dark ps-2 py-2">Student List</h3>
+<div class="my-3">
+  <ng-content></ng-content>
+</div>
+
+<table class="table table-striped table-responsive table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Subjects</th>
+      <th>Hobbies</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (student of students(); track $index) {
+      <tr>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.subjects}}</td>
+        <td>{{student.hobbies}}</td>
+        <td>{{student.address}}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="6" class="bg-info-subtle text-center" style="font-size: 1.1rem;">
+          <i class="bi-exclamation-triangle-fill"></i>
+          No student found!
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
